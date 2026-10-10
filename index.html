@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Voxel Mumbai — OpenStreetMap 3D Sandbox</title>
+  <meta name="description" content="Explore and build Voxel Mumbai: a browser-based voxel sandbox generated from real OpenStreetMap data and elevation.">
+  <link rel="stylesheet" href="/packages/web/src/style.css">
+</head>
+<body>
+  <div id="canvas-container">
+    <canvas id="voxel-canvas"></canvas>
+  </div>
+
+  <!-- Center Crosshair -->
+  <div id="crosshair"></div>
+
+  <!-- Top Navigation & Stats Bar -->
+  <header id="top-bar">
+    <div class="brand-badge">
+      <span class="brand-title">Voxel Mumbai</span>
+      <span class="brand-location" id="active-location-name">📍 Marine Drive</span>
+    </div>
+
+    <div class="top-actions">
+      <button class="action-btn" id="btn-open-presets" aria-label="Explore Mumbai Presets">
+        <span>🏙️</span> Locations
+      </button>
+      <button class="action-btn" id="btn-monsoon" aria-label="Toggle Monsoon Weather">
+        <span>🌧️</span> Monsoon
+      </button>
+      <button class="action-btn" id="btn-time" aria-label="Toggle Time of Day">
+        <span id="time-icon">🌅</span> <span id="time-text">Sunset</span>
+      </button>
+      <button class="action-btn" id="btn-share" aria-label="Share Location URL">
+        <span>🔗</span> Share Spot
+      </button>
+    </div>
+
+    <div class="stats-panel" id="stats-panel">
+      <span>FPS: <strong id="stat-fps">60</strong></span>
+      <span>Chunks: <strong id="stat-chunks">0</strong></span>
+      <span>Lat/Lon: <strong id="stat-latlon">18.9265, 72.8228</strong></span>
+    </div>
+  </header>
+
+  <!-- Controls Hint Banner -->
+  <aside id="controls-hint">
+    <span><span class="key-badge">WASD</span> Move</span>
+    <span><span class="key-badge">Space</span>/<span class="key-badge">Ctrl</span> Fly Up/Down</span>
+    <span><span class="key-badge">Shift</span> Sprint</span>
+    <span><span class="key-badge">1-9</span> Hotbar</span>
+    <span><span class="key-badge">M</span> Locations</span>
+    <span><span class="key-badge">Click</span> Look</span>
+  </aside>
+
+  <!-- Hotbar -->
+  <nav id="hotbar" aria-label="Block Hotbar"></nav>
+
+  <!-- Click to Lock Prompt -->
+  <div id="pointer-lock-prompt">
+    <div class="prompt-icon">🌊</div>
+    <div class="prompt-title">Explore Voxel Mumbai</div>
+    <div class="prompt-subtitle">Click anywhere to explore the real OpenStreetMap geometry of Mumbai with Queen's Necklace, Marine Drive tetrapods, Art Deco buildings, and Arabian Sea.</div>
+  </div>
+
+  <!-- Location Presets Modal -->
+  <div id="preset-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Explore Mumbai Locations</h2>
+        <button class="close-btn" id="btn-close-presets" aria-label="Close Modal">&times;</button>
+      </div>
+
+      <div class="search-container">
+        <input type="text" id="preset-search-input" class="search-input" placeholder="Search any Mumbai area or landmark (e.g. Bandra, Dadar, Colaba)..." />
+        <button class="action-btn" id="btn-surprise-me">🎲 Surprise Me</button>
+      </div>
+
+      <div class="preset-grid" id="preset-grid">
+        <!-- Injected dynamically by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading Overlay -->
+  <div id="loading-overlay">
+    <div class="loading-spinner"></div>
+    <div class="loading-step-text" id="loading-step-text">Fetching map data from OpenStreetMap...</div>
+    <div class="loading-fact-card">
+      <div class="loading-fact-title">Mumbai Trivia</div>
+      <div id="loading-fact-content">Marine Drive has the world's second largest cluster of Art Deco buildings after Miami.</div>
+    </div>
+  </div>
+
+  <!-- Attribution Watermark (Mandatory ODbL & Credits) -->
+  <footer id="attribution">
+    © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a> | Voxel Mumbai CC0 Engine
+  </footer>
+
+  <script type="module" src="/packages/web/src/main.js"></script>
+</body>
+</html>
