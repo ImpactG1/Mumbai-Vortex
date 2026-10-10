@@ -9,6 +9,10 @@
 [![GitHub Stars](https://img.shields.io/github/stars/ImpactG1/Mumbai-Vortex?style=social)](https://github.com/ImpactG1/Mumbai-Vortex/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/ImpactG1/Mumbai-Vortex?style=social)](https://github.com/ImpactG1/Mumbai-Vortex/network/members)
 
+<p align="center">
+  <img src="assets/voxel_mumbai_hero.jpg" alt="Voxel Mumbai - Marine Drive, CSMT and Arabian Sea Promenade" width="100%" />
+</p>
+
 > A browser-based, Minecraft-style voxel sandbox where the world is procedurally generated from real **OpenStreetMap (OSM)** vector data and real elevation data of Mumbai. Explore, fly, build on top of the real city, and share exact spots.
 
 ---
